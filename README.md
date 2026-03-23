@@ -36,6 +36,33 @@ Or with a topic:
 
 Say "exit research mode" to turn it off.
 
+### Examples in a codebase
+
+Research how a specific part of the codebase works, grounded in the actual code:
+
+```
+/research-mode:research how does the authentication flow work in this codebase
+```
+
+Claude will search the repo, extract exact quotes from the source files, and explain the flow citing specific files and line numbers. If something isn't documented or evident in the code, it says so instead of guessing.
+
+Understand a design decision:
+
+```
+/research-mode:research why does the API client use exponential backoff with jitter
+```
+
+It'll check the implementation, git history, code comments, and any docs in the repo. If the "why" isn't recorded anywhere, it'll tell you that rather than inventing a plausible-sounding reason.
+
+Or just toggle it on and ask questions interactively:
+
+```
+/research-mode:research
+> how is rate limiting implemented?
+> what happens when the token expires mid-request?
+> exit research mode
+```
+
 ## What it does
 
 Four constraints activate simultaneously:
