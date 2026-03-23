@@ -4,35 +4,12 @@ Anti-hallucination toggle for Claude Code. Activates constraints from [Anthropic
 
 ## Install
 
-### Option A: Plugin (recommended)
-
-Clone the repo into your Claude Code plugins directory:
-
 ```bash
-# macOS / Linux
-git clone https://github.com/gdodd1977/research-mode.git ~/.claude/plugins/installed/research-mode
-
-# Windows (Git Bash)
-git clone https://github.com/gdodd1977/research-mode.git "$USERPROFILE/.claude/plugins/installed/research-mode"
+claude plugin marketplace add gdodd1977/research-mode
+claude plugin install research-mode
 ```
 
-Restart Claude Code. The skill will be available as `/research-mode:research`.
-
-### Option B: User command (simple)
-
-If you just want the slash command without the plugin system:
-
-```bash
-# macOS / Linux
-mkdir -p ~/.claude/commands
-curl -o ~/.claude/commands/research.md https://raw.githubusercontent.com/gdodd1977/research-mode/master/commands/research.md
-
-# Windows (Git Bash)
-mkdir -p "$USERPROFILE/.claude/commands"
-curl -o "$USERPROFILE/.claude/commands/research.md" https://raw.githubusercontent.com/gdodd1977/research-mode/master/commands/research.md
-```
-
-Available as `/research`.
+Restart Claude Code after installing.
 
 ## Use
 
@@ -74,12 +51,12 @@ LLMs hallucinate. When you're doing research that matters, you need guardrails t
 ```
 research-mode/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin metadata
-├── skills/
-│   └── research/
-│       └── SKILL.md          # Skill definition (plugin install)
-├── commands/
-│   └── research.md           # User command (simple install)
+│   └── marketplace.json        # Marketplace metadata
+├── research-mode/
+│   ├── .claude-plugin/
+│   │   └── plugin.json         # Plugin metadata
+│   └── commands/
+│       └── research.md         # The command definition
 ├── LICENSE
 └── README.md
 ```

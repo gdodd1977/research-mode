@@ -1,0 +1,27 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "gdodd1977-research-mode",
+  "metadata": {
+    "description": "Anti-hallucination research mode for Claude Code",
+    "version": "1.0.0",
+    "license": "MIT",
+    "repository": "https://github.com/gdodd1977/research-mode",
+    "homepage": "https://github.com/gdodd1977/research-mode"
+  },
+  "owner": {
+    "name": "gdodd1977"
+  },
+  "plugins": [
+    {
+      "name": "research-mode",
+      "version": "1.0.0",
+      "source": "./research-mode",
+      "description": "Anti-hallucination research mode — enforces citations, source grounding, and 'I don't know' behavior",
+      "category": "productivity",
+      "tags": ["research", "hallucination", "citations", "grounding"],
+      "author": {
+        "name": "gdodd1977"
+      }
+    }
+  ]
+}
