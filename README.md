@@ -9,7 +9,18 @@ claude plugin marketplace add gdodd1977/research-mode
 claude plugin install research-mode
 ```
 
-Restart Claude Code after installing.
+Restart Claude Code after installing. The plugin is installed at user scope by default, so it's available globally in any directory.
+
+### Alternative: local repo command
+
+If you don't want to install the plugin globally, you can add the command directly to a project:
+
+```bash
+mkdir -p .claude/commands
+curl -o .claude/commands/research.md https://raw.githubusercontent.com/gdodd1977/research-mode/master/research-mode/commands/research.md
+```
+
+This makes `/research` available only when working in that repo. Commit the file to share it with your team.
 
 ## Use
 
