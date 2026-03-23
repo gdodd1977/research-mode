@@ -4,23 +4,35 @@ Anti-hallucination toggle for Claude Code. Activates constraints from [Anthropic
 
 ## Install
 
-Copy `commands/research.md` to your Claude Code user commands directory:
+### Option A: Plugin (recommended)
+
+Clone the repo into your Claude Code plugins directory:
 
 ```bash
 # macOS / Linux
-cp commands/research.md ~/.claude/commands/research.md
+git clone https://github.com/gdodd1977/research-mode.git ~/.claude/plugins/installed/research-mode
 
 # Windows (Git Bash)
-cp commands/research.md "$USERPROFILE/.claude/commands/research.md"
+git clone https://github.com/gdodd1977/research-mode.git "$USERPROFILE/.claude/plugins/installed/research-mode"
 ```
 
-Or clone and copy:
+Restart Claude Code. The skill will be available as `/research-mode:research`.
+
+### Option B: User command (simple)
+
+If you just want the slash command without the plugin system:
 
 ```bash
-git clone https://github.com/gdodd1977/research-mode.git
+# macOS / Linux
 mkdir -p ~/.claude/commands
-cp research-mode/commands/research.md ~/.claude/commands/research.md
+curl -o ~/.claude/commands/research.md https://raw.githubusercontent.com/gdodd1977/research-mode/master/commands/research.md
+
+# Windows (Git Bash)
+mkdir -p "$USERPROFILE/.claude/commands"
+curl -o "$USERPROFILE/.claude/commands/research.md" https://raw.githubusercontent.com/gdodd1977/research-mode/master/commands/research.md
 ```
+
+Available as `/research`.
 
 ## Use
 
@@ -56,6 +68,21 @@ Advanced techniques (chain-of-thought verification, iterative refinement) are ap
 ## Why
 
 LLMs hallucinate. When you're doing research that matters, you need guardrails that force citation discipline. This packages [Anthropic's own recommendations](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations) into a one-command toggle.
+
+## Project structure
+
+```
+research-mode/
+├── .claude-plugin/
+│   └── plugin.json          # Plugin metadata
+├── skills/
+│   └── research/
+│       └── SKILL.md          # Skill definition (plugin install)
+├── commands/
+│   └── research.md           # User command (simple install)
+├── LICENSE
+└── README.md
+```
 
 ## License
 
