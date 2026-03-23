@@ -14,13 +14,13 @@ Restart Claude Code after installing.
 ## Use
 
 ```
-/research
+/research-mode:research
 ```
 
 Or with a topic:
 
 ```
-/research what caused the Change Healthcare breach
+/research-mode:research what caused the Change Healthcare breach
 ```
 
 Say "exit research mode" to turn it off.
